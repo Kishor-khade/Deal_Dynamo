@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deal Dynamo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #131313;
+      color: #f9f2f2;
+    }
+
+    h1,
+    h2 {
+      font-size: 2rem;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #f4f4f4;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #666;
+    }
+
+    .category {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+
+    .ag-format-container {
+      width: 1142px;
+      margin: 0 auto;
+    }
+
+
+    body {
+      background-color: #000;
+
+    }
+
+    .ag-courses_box {
+
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+
+      padding: 50px 0;
+    }
+
+    .ag-courses_item {
+
+      -ms-flex-preferred-size: calc(33.33333% - 30px);
+      flex-basis: calc(33.33333% - 30px);
+
+      margin: 0 15px 30px;
+
+      overflow: hidden;
+
+      border-radius: 28px;
+    }
+
+    .ag-courses-item_link {
+      text-decoration: none;
+      display: block;
+      padding: 30px 20px;
+      background-color: #121212;
+
+      overflow: hidden;
+
+      position: relative;
+    }
+
+    .ag-courses-item_link:hover,
+    .ag-courses-item_link:hover .ag-courses-item_date {
+      text-decoration: none;
+      color: #FFF;
+    }
+
+    .ag-courses-item_link:hover .ag-courses-item_bg {
+      -webkit-transform: scale(10);
+      -ms-transform: scale(10);
+      transform: scale(10);
+    }
+
+    .ag-courses-item_title {
+      min-height: 87px;
+      margin: 0 0 25px;
+
+      overflow: hidden;
+
+      font-weight: bold;
+      font-size: 30px;
+      color: #FFF;
+
+      z-index: 2;
+      position: relative;
+    }
+
+    .ag-courses-item_date-box {
+      font-size: 18px;
+      color: #FFF;
+
+      z-index: 2;
+      position: relative;
+    }
+
+    .ag-courses-item_date {
+      font-weight: bold;
+      color: #f9b234;
+
+      -webkit-transition: color .5s ease;
+      -o-transition: color .5s ease;
+      transition: color .5s ease
+    }
+
+    .ag-courses-item_bg {
+      height: 128px;
+      width: 128px;
+      background-color: #f9b234;
+
+      z-index: 1;
+      position: absolute;
+      top: -75px;
+      right: -75px;
+
+      border-radius: 50%;
+
+      -webkit-transition: all .5s ease;
+      -o-transition: all .5s ease;
+      transition: all .5s ease;
+    }
+
+    .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+      background-color: #3ecd5e;
+    }
+
+    .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+      background-color: #e44002;
+    }
+
+    .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+      background-color: #952aff;
+    }
+
+    .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+      background-color: #cd3e94;
+    }
+
+    .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+      background-color: #4c49ea;
+    }
+
+
+
+    @media only screen and (max-width: 979px) {
+      .ag-courses_item {
+        -ms-flex-preferred-size: calc(50% - 30px);
+        flex-basis: calc(50% - 30px);
+      }
+
+      .ag-courses-item_title {
+        font-size: 24px;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .ag-format-container {
+        width: 96%;
+      }
+
+    }
+
+    @media only screen and (max-width: 639px) {
+      .ag-courses_item {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+      }
+
+      .ag-courses-item_title {
+        min-height: 72px;
+        line-height: 1;
+
+        font-size: 24px;
+      }
+
+      .ag-courses-item_link {
+        padding: 22px 40px;
+      }
+
+      .ag-courses-item_date-box {
+        font-size: 16px;
+      }
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .product {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      width: calc(25% - 40px);
+      /* Adjust according to your preference */
+      box-sizing: border-box;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .product p {
+      margin-bottom: 0;
+      color: #666;
+    }
+
+    .gradient-text {
+      --s: 0.1em;
+      /* the thickness of the line */
+      --c: #f8f406;
+      /* the color */
+      --hover-c: #ffff00;
+      color: #ebe7e700;
+      font-size: 1.5rem;
+      padding-bottom: var(--s);
+      font-weight: bold;
+      /* make text bold */
+      line-height: 1.5;
+      /* increase height */
+      background:
+        linear-gradient(90deg, var(--c) 50%, #0f0f0f 0) calc(100% - var(--_p, 0%))/200% 100%,
+        linear-gradient(var(--c) 0 0) 0% 100%/var(--_p, 0%) var(--s) no-repeat;
+      -webkit-background-clip: text, padding-box;
+      background-clip: text, padding-box;
+      transition: 0.5s;
+    }
+
+    .gradient-text:hover {
+      --_p: 100%;
+      --c: var(--hover-c);
+    }
+
+    @media (max-width: 768px) {
+      .product {
+        width: calc(50% - 40px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product {
+        width: calc(100% - 40px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+  </header>
+  <header style="display: flex;">
+    <img style="padding: 10px;" src="/static/online_shopping.png" width="100">
+    <h1 style="padding: 10px;">Deal Dynamo</h1>
+  </header>
+  <nav>
+    {% for category, messages in categorized_data.items() %}
+      <a href='#{{ category }}' class="gradient-text">{{ category }}</a>
+    {% endfor %}
+  </nav>
+  {% for category, messages in categorized_data.items() %}
+  <section id="{{ category }}" class="category">
+    <h1>{{ category }}</h1>
+
+    <div class="products">
+
+      <div class="ag-format-container">
+
+        <div class="ag-courses_box">
+          {% for message in messages %}
+          <div class="ag-courses_item">
+            <a href="{{ message.link }}" class="ag-courses-item_link" target=”_blank”>
+              <div class="ag-courses-item_bg"></div>
+              <div class="ag-courses-item_title">
+                Product {{ loop.index }}
+              </div>
+              <div class="ag-courses-item_date-box">
+                <span class="ag-courses-item_date">
+                  {{ message['description']}}
+                </span>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+
+    <!-- <div class="products">
+            <div class="product">
+                <h3>Product 1</h3>
+                <p>Description for Product 1 - Household</p>
+            </div>
+            <div class="product">
+                <h3>Product 2</h3>
+                <p>Description for Product 2 - Household</p>
+            </div> -->
+    <!-- Add more products as needed -->
+  </section>
+  {% endfor %}
+</body>
+
+</html>
